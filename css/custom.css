@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+h1,
+h2,
+h3,
+.mensaje {
+	font-family: 'Amatic SC';
+	font-weight: bold;	
+}
+
+.mensaje {
+	font-size: 10vw;
+	text-align: center;
+	margin: 2% 2%;
+	padding: 2% 2%
+}
+
+.logo {
+	font-family: 'Amatic SC';
+	font-size: 67px;
+	text-align: right;
+	padding-left: 1%;
+}
+
+header {
+	width: 102%;
+	position: fixed;
+	top: 0px;
+	z-index: 100 !important;
+}
+
+a {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+#footer {
+	background: black;
+	height: 60px;
+	clear: both;
+	position: relative;
+	bottom: 0%;
+	color: aliceblue;
+	font-size: 10px;
+	text-align: center;
+	padding-top: 20px;
+}
+
+#centro {
+	margin-top: 210px;
+	padding-bottom: 100px;
+	margin-bottom: 100px;
+}
+
+.curso {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.curso img {
+	width: 150px;
+	height: 150px;
+}
+
+.curso p {
+	margin: 6px auto 11px;
+	text-align: justify;
+	max-width: 500px;
+	padding-left: 19px;
+	padding-right: 19px;
+}
+
+.lado {
+	margin-top: 70px;
+	padding-left: 30px;
+	padding-top: 30px;
+}
+
+@media screen and (max-width:400px) {
+	.mensaje {
+		font-size: 13vw;
+	}
+	.logo {
+		font-size: 11vw;
+	}
+	.lado {
+		margin-top: 0px;
+	}
+	#centro {
+		margin-top: 160px;
+	}
+}
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+h1,
+h2,
+h3,
+.mensaje {
+	font-family: 'Amatic SC';
+	font-weight: bold;	
+}
+
+.mensaje {
+	font-size: 10vw;
+	text-align: center;
+	margin: 2% 2%;
+	padding: 2% 2%
+}
+
+.logo {
+	font-family: 'Amatic SC';
+	font-size: 67px;
+	text-align: right;
+	padding-left: 1%;
+}
+
+header {
+	width: 102%;
+	position: fixed;
+	top: 0px;
+	z-index: 1;
+}
+
+a {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+#footer {
+	background: black;
+	height: 60px;
+	clear: both;
+	position: relative;
+	bottom: 0%;
+	color: aliceblue;
+	font-size: 10px;
+	text-align: center;
+	padding-top: 20px;
+}
+
+#centro {
+	margin-top: 210px;
+	padding-bottom: 100px;
+	margin-bottom: 100px;
+}
+
+.curso {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.curso img {
+	width: 150px;
+	height: 150px;
+}
+
+.curso p {
+	margin: 6px auto 11px;
+	text-align: justify;
+	max-width: 500px;
+	padding-left: 19px;
+	padding-right: 19px;
+}
+
+.lado {
+	margin-top: 70px;
+	padding-left: 30px;
+	padding-top: 30px;
+}
+
+@media screen and (max-width:400px) {
+	.mensaje {
+		font-size: 13vw;
+	}
+	.logo {
+		font-size: 11vw;
+	}
+	.lado {
+		margin-top: 0px;
+	}
+	#centro {
+		margin-top: 160px;
+	}
+}
