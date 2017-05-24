@@ -1,50 +1,55 @@
 <?php
 session_start();
-//header("Refresh: 3; form_login.php");
+//ini_set('display_errors', 'On');
+//ini_set('display_startup_errors', 'Off');
+//error_reporting(E_ALL ^ E_NOTICE);
+include('conexionMysqli.php');
+include('postVar.php');
 	
-
-		if(!isset($_SESSION["nombre"])){
-			include('conexionMysqli.php');
-			include('postVar.php');
-			
-			$query="SELECT nombre FROM USERS WHERE nombre=? AND pass=?";
-			$extracto = $conexion->prepare($query);
-			$extracto->bind_param("ss",$nombre,$pass);
-			$extracto->execute();
-
-			$rows=0;
+	if(!isset($_SESSION["nombre"])){
+			$pass=htmlentities(addslashes($pass));
+			$query="SELECT idusers, pass FROM users WHERE nombre=?";
+			$extracto = $conexion->prepare($query); 	//meter la sentencia sql en un objeto stmt
+			$extracto->bind_param("s",$nombre);//enlazar los parametros con las ?
+			$extracto->execute();//ejecutar
+			$extracto->bind_result($iduser,$hash);//enlazar el resultado con las variables de retorno
+			$extracto->store_result();						//almacenar el resultado en el buffer para que funcione el metodo num_rows siguiente
+			$filas=$extracto->num_rows;					//devuelve las filas encontradas
+//			$extracto->fetch();
+//			$cont=0;
 			while($extracto->fetch()){
-				++$rows;
-			}
-
-			if($rows>0){
-				header("Refresh: 2; crudBasic.php");
+			//echo "nom=$nombre y pass=$pass idus=$iduser hash=$hash    ";
+				if (password_verify($pass, $hash)) {
+					$filas++;
+					//$cont++;
+				}
+			}			
+		//	if($cont>0){
+			if($filas>0){
+				header("Refresh: 1; _inicio.php");
+				//session_name($nombre);
 				$_SESSION["nombre"]=$nombre;
-				session_name($nombre);
-				$nomSesion=session_name();
+				$_SESSION["iduser"]=$iduser;
 				$tiempo=time()+60*60*24*365;
 				$resta=$tiempo-time();
-				
-				if(!isset($_COOKIE["visitas"])){
-					$visita=1;
-					setcookie("visitas",$visita,$tiempo);
-					echo "se ha creado la cookie <br>";
-				}
-				else{
-					setcookie("visitas",$visitas++,$tiempo);
-					echo "se ha incrementado la cookie en $visitas";
-				}
-				
-				echo "bienvenido $nombre tu sesion se llama $nomSesion durante $resta estara guardada <br>nos has visitado $visitas veces <br>";
-				
+					if(!isset($visitas)){
+						$visita=1;
+						setcookie("visitas", $visita, $tiempo);
+						echo "se ha creado la cookie <br>";
+					}
+					else{
+						$visita=$visitas+1;
+						setcookie("visitas", $visita, $tiempo);
+					//	echo "se ha incrementado la cookie en $visitas";
+					}
+//					echo "bienvenido $nombre tu sesion se llama $nomSesion durante $resta estara guardada <br>nos has visitado $visitas veces <br>";
+				//echo "bienvenido $nombre tu id es $iduser";
 			}
 			else echo "error";
-
 		}
 		else {
-			header("Refresh: 2; crudBasic.php");
-			//header("Location:form_login.php");
-			echo "<br><h1>ya estas loggeado $user </h1><br>";
+			header("Refresh: 2; _inicio.php");
+			echo "<br><h1>ya estas loggeado $user id=$iduser</h1><br>";
 		}
-	include('conexionClose.php');
+ mysqli_close($conexion);
 ?>
