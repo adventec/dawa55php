@@ -16,13 +16,13 @@
 								<span class="icon-bar"></span> 
 								<span class="icon-bar"></span> 
 			</button> 				
-			<a class="navbar-brand logo" id="logo" href="index.php">YÖMËLÖGUÏSÖ</a> 
+			<a class="navbar-brand logo" id="logo" href="_inicio.php">YÖMËLÖGUÏSÖ</a> 
 		 </div>
 
 		 <!-- Collect the nav links, forms, and other content for toggling -->
 		 <div class="collapse navbar-collapse" id="barramini">
 					 <ul class="nav navbar-nav">
-						<li class="active"><a href="inicio.php">Home</a></li>
+						<li class="active"><a href="_inicio.php">Home</a></li>
 						<li><a href="formCursosP.php">Cursos</a></li>
 						<li><a href="formUsuarios.php">Usuarios</a></li>
 					 </ul>
@@ -32,7 +32,7 @@
 						<li><a href="formRegister.php"><span class="glyphicon glyphicon-user">   </span>Registro</a></li> 
 						<li><a href="formLogin.php">   <span class="glyphicon glyphicon-log-in"> </span>Login</a></li>		 		 
 			 		 <?php } else{	?>
-						<li><a href="datosuser.php"><span class="glyphicon glyphicon-user"></span><?php echo " hola $user    ";?><span class="badge"><?php echo $visitas;?></span></a></li>
+						<li><a href="controlUsuarios.php"><span class="glyphicon glyphicon-user"></span><?php echo " hola $user    ";?><span class="badge"><?php echo $visitas;?></span></a></li>
 						<li><a href="functions.php?cerrar=cerrar"><span class="glyphicon glyphicon-log-in"></span> Salir</a>
 						
 					<?php			

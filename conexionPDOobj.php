@@ -1,4 +1,5 @@
 <?php
+session_start();
 class ConexionPDOobj{
 	public static function conectar(){
 		$servidor="localhost";

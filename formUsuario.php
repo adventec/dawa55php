@@ -1,3 +1,7 @@
+<?php 
+session_start();
+include('cabecera.php');  ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +11,9 @@
 	<link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<?php include('cabecera.php');  ?>
 
 
+<?php echo $iduser; ?>
 
 <form name="formUsuario" action="functions.php" method="post">
 	

@@ -15,21 +15,20 @@ include('postVar.php');
 			$extracto->bind_result($iduser,$hash);//enlazar el resultado con las variables de retorno
 			$extracto->store_result();						//almacenar el resultado en el buffer para que funcione el metodo num_rows siguiente
 			$filas=$extracto->num_rows;					//devuelve las filas encontradas
-//			$extracto->fetch();
-//			$cont=0;
+
 			while($extracto->fetch()){
-			//echo "nom=$nombre y pass=$pass idus=$iduser hash=$hash    ";
+			
 				if (password_verify($pass, $hash)) {
 					$filas++;
 					//$cont++;
 				}
 			}			
-		//	if($cont>0){
+		
 			if($filas>0){
 				header("Refresh: 1; _inicio.php");
-				//session_name($nombre);
+				
 				$_SESSION["nombre"]=$nombre;
-				$_SESSION["iduser"]=$iduser;
+				$_SESSION["iduser"]=$idusers;
 				$tiempo=time()+60*60*24*365;
 				$resta=$tiempo-time();
 					if(!isset($visitas)){

@@ -31,7 +31,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 <!--CABECERA-->
 <?php	include('cabecera.php');	?>
 <!--FIN DE CABECERA-->
-
+<?php echo "ide=$iduser"; ?>
 <div id="centro">
 <div class="row"><!--FILA TABLA-->
 	

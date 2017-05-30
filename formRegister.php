@@ -32,7 +32,7 @@
 		<fieldset>
 
 	<!-- Form Name -->
-		<legend class="colxs-2 col-xs-offset-1">Registate</legend>
+		<legend class="colxs-2 col-xs-offset-1">Regístrate</legend>
 
 	<!-- Text input-->
 		<div class="form-group">
